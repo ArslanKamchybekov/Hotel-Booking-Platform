@@ -5,6 +5,10 @@ const RoomSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    desc: {
+        type: String,
+        required: true
+    },
     price: {
         type: Number,
         required: true,
@@ -14,14 +18,6 @@ const RoomSchema = new mongoose.Schema({
         required: true,
     },
     roomNumbers: [{number: Number, unavailableDates: {type: [Date]}}],
-    desc: {
-        type: String,
-        required: true
-    },
-    isAdmin: {
-        type: Boolean,
-        default: false
-    },
 }, { timestamps: true });
 
 export default mongoose.model("Room", RoomSchema)
